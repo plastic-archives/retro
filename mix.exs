@@ -1,13 +1,26 @@
 defmodule Retro.MixProject do
   use Mix.Project
 
+  @github_url "https://github.com/c4710n/retro"
+
   def project do
     [
       app: :retro,
+      description: "A toolkit for pragmatic programmers.",
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+
+      # Docs
+      name: "Retro",
+      source_url: @github_url,
+      homepage_url: @github_url,
+      docs: [
+        main: "readme",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -21,7 +34,15 @@ defmodule Retro.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tzdata, "~> 1.0.3"}
+      {:tzdata, "~> 1.0.3"},
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => @github_url}
     ]
   end
 end

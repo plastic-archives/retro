@@ -1,6 +1,6 @@
 # Retro
 
-A Toolkit.
+> A toolkit for pragmatic programmers.
 
 ## Installation
 
@@ -14,6 +14,10 @@ def deps do
 end
 ```
 
+## Docs
+
+Visit [HexDocs](https://hexdocs.pm/retro).
+
 <!--
 Import config in your `config/config.exs`
 
@@ -24,10 +28,6 @@ import_config "../deps/retro/config/config.exs"
 ```
 -->
 
-## To-Do
+## License
 
-### Add docs
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/retro](https://hexdocs.pm/retro).
+MIT
