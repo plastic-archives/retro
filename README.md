@@ -1,11 +1,10 @@
 # Retro
 
-**TODO: Add description**
+A Toolkit.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `retro` to your list of dependencies in `mix.exs`:
+Install retro by adding `retro` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +14,20 @@ def deps do
 end
 ```
 
+<!--
+Import config in your `config/config.exs`
+
+```elixir
+import Config
+
+import_config "../deps/retro/config/config.exs"
+```
+-->
+
+## To-Do
+
+### Add docs
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/retro](https://hexdocs.pm/retro).
-
