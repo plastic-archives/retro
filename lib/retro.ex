@@ -1,5 +1,5 @@
 defmodule Retro do
   @moduledoc """
-  Documentation for `Retro`.
+  Root module for Retro.
   """
 end

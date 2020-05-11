@@ -1,6 +1,6 @@
 defmodule Retro.DateTime do
   @moduledoc """
-  DateTime Toolkit.
+  Toolkit for extending `Elixir.DateTime`.
   """
   @moduledoc since: "0.1.0"
 
