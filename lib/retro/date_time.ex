@@ -1,6 +1,9 @@
 defmodule Retro.DateTime do
   @moduledoc """
   Toolkit for extending `Elixir.DateTime`.
+
+  This module will be deperacated when [nimble_strftime](https://github.com/dashbitco/nimble_strftime)
+  is merged to Elixir.
   """
   @moduledoc since: "0.1.0"
 
@@ -17,7 +20,6 @@ defmodule Retro.DateTime do
 
       iex> Retro.DateTime.to_local_time_string(~U[2020-05-11 07:39:41.509913Z], time_zone: "Asia/Shanghai")
       '2020-05-11 15:39:41'
-
   """
   @doc since: "0.1.0"
   def to_local_time_string!(%DateTime{} = date_time, opts \\ []) do
