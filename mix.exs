@@ -38,6 +38,7 @@ defmodule Retro.MixProject do
     [
       {:tzdata, "~> 1.0.3"},
       {:phoenix_html, ">= 0.0.0"},
+      {:plug, ">= 0.0.0"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
     ]
   end
