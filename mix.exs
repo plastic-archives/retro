@@ -40,7 +40,7 @@ defmodule Retro.MixProject do
       {:phoenix_html, ">= 0.0.0"},
       {:phoenix, ">= 0.0.0"},
       {:plug, ">= 0.0.0"},
-      {:ex_doc, "~> 0.21", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
     ]
   end
 
