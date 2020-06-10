@@ -24,16 +24,6 @@ end
 
 Visit [HexDocs](https://hexdocs.pm/retro).
 
-<!--
-Import config in your `config/config.exs`
-
-```elixir
-import Config
-
-import_config "../deps/retro/config/config.exs"
-```
--->
-
 ## License
 
 MIT
