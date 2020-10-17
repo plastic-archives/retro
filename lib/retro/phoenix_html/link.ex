@@ -25,7 +25,11 @@ defmodule Retro.Phoenix.HTML.Link do
 
   """
   @doc since: "0.2.0"
-  def external_link(text, opts) do
+  def external_link(opts, do: contents) when is_list(opts) do
+    external_link(contents, opts)
+  end
+
+  def external_link(contents, opts) do
     default_opts = [
       target: "_blank",
       rel: "noopener noreferrer"
@@ -33,6 +37,6 @@ defmodule Retro.Phoenix.HTML.Link do
 
     opts = Keyword.merge(default_opts, opts)
 
-    link(text, opts)
+    link(contents, opts)
   end
 end
