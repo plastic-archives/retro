@@ -44,12 +44,13 @@ defmodule Retro.Plug.HealthCheck do
     ]
   end
 
-  def call(%Plug.Conn{request_path: request_path} = conn, opts)
-      when request_path === opts[:path] do
-    conn
-    |> send_resp(opts[:status], opts[:body])
-    |> halt()
+  def call(%Plug.Conn{request_path: request_path} = conn, path: path, status: status, body: body) do
+    if request_path == path do
+      conn
+      |> send_resp(status, body)
+      |> halt()
+    else
+      conn
+    end
   end
-
-  def call(conn, _opts), do: conn
 end
