@@ -1,19 +1,16 @@
-defmodule Retro.Phoenix.Router.Helpers do
+defmodule Retro.Phoenix.Plug.ProxySensation do
   @moduledoc """
-  Toolkit for extending `Phoenix.Router.Helpers`.
-  """
-  @moduledoc since: "0.3.0"
+  Set endpoint base URL according to the proxy related headers.
 
-  @doc """
-  Generates the connection/endpoint base URL according to reverse proxy related
-  headers.
-
-  Derive protocol from following headers:
+  Derive scheme from following headers:
   * `x-forwarded-proto`
 
   Derive host from following headers:
   * `x-forwarded-host`
   * `x-forwarded-server`
+
+  Devrive port from following headers:
+  * `x-forwarded-port`
 
   ## Examples
 
@@ -22,25 +19,27 @@ defmodule Retro.Phoenix.Router.Helpers do
 
       iex> base_url(%Plug.Conn{})
       nil
-
   """
-  @doc since: "0.3.0"
-  def base_url(%Plug.Conn{} = conn) do
+  @moduledoc since: "1.0.0"
+
+  import Phoenix.Controller, only: [put_router_url: 2]
+
+  def init(opts), do: opts
+
+  def call(conn, _opts) do
     req_headers =
       conn
       |> Map.get(:req_headers)
       |> Enum.into(%{})
 
-    protocol = Map.get(req_headers, "x-forwarded-proto")
+    scheme = Map.get(req_headers, "x-forwarded-proto")
 
     host =
       Map.get(req_headers, "x-forwarded-host") ||
         Map.get(req_headers, "x-forwarded-server")
 
-    if protocol && host do
-      "#{protocol}://#{host}"
-    else
-      nil
-    end
+    port = Map.get(req_headers, "x-forwarded-port")
+
+    put_router_url(conn, %URI{scheme: scheme, host: host, port: port})
   end
 end
