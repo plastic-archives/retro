@@ -36,11 +36,11 @@ defmodule Retro.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tzdata, "~> 1.0.3"},
+      {:tzdata, "~> 1.1.0"},
       {:phoenix_html, ">= 0.0.0"},
       {:phoenix, ">= 0.0.0"},
       {:plug, ">= 0.0.0"},
-      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.23", only: :dev, runtime: false}
     ]
   end
 
