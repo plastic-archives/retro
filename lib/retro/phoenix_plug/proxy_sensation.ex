@@ -41,7 +41,7 @@ defmodule Retro.Phoenix.Plug.ProxySensation do
     port = Map.get(req_headers, "x-forwarded-port")
     port = port && String.to_integer(port)
 
-    if schema && host do
+    if scheme && host do
       put_router_url(conn, %URI{
         scheme: scheme,
         host: host,
