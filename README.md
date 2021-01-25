@@ -1,6 +1,6 @@
 # Retro
 
-> A toolkit for pragmatic programmers.
+> A toolkit for pragmatic Elixir programmers.
 
 ## Why does this library includes so many things?
 

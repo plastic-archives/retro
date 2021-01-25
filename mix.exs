@@ -1,13 +1,13 @@
 defmodule Retro.MixProject do
   use Mix.Project
 
-  @version "1.0.1"
+  @version "1.0.2"
   @github_url "https://github.com/c4710n/retro"
 
   def project do
     [
       app: :retro,
-      description: "A toolkit for pragmatic programmers.",
+      description: "A toolkit for pragmatic Elixir programmers.",
       version: @version,
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
