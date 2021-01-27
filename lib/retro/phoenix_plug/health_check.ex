@@ -1,4 +1,4 @@
-defmodule Retro.Plug.HealthCheck do
+defmodule Retro.Phoenix.Plug.HealthCheck do
   @moduledoc """
   Health checks can be used for liveness or readiness probes.
 
@@ -20,7 +20,7 @@ defmodule Retro.Plug.HealthCheck do
     use Phoenix.Endpoint, otp_app: :hello
 
     # Put the health check here, before anything else
-    plug Retro.Plug.HealthCheck
+    plug Retro.Phoenix.Plug.HealthCheck
   end
   ```
 
