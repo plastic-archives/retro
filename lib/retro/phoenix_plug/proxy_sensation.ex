@@ -13,7 +13,6 @@ defmodule Retro.Phoenix.Plug.ProxySensation do
   * `x-forwarded-port`
 
   Derive remote_ip from following headers:
-  * `x-forwarded-for`
   * `x-real-ip`
 
 
@@ -69,7 +68,7 @@ defmodule Retro.Phoenix.Plug.ProxySensation do
   end
 
   def resolve_remote_ip(conn, headers) do
-    ip = Map.get(headers, "x-forwarded-for") || Map.get(headers, "x-real-ip")
+    ip = Map.get(headers, "x-real-ip")
 
     Logger.metadata(remote_ip: ip)
 
