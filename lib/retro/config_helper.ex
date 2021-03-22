@@ -1,6 +1,10 @@
 defmodule Retro.ConfigHelper do
+  @moduledoc """
+  Helpers for `config/*.exs`.
+  """
+
   @doc """
-  Parse the url of phoenix endpoint.
+  Parse the url of Phoenix endpoint.
 
   When deploying Phoenix application behind a proxy, it is common to specify the
   `:url` option of Phoenix endpoint like this:
