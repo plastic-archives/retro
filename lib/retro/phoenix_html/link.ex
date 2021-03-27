@@ -17,12 +17,15 @@ defmodule Retro.Phoenix.HTML.Link do
 
       [
         target: "_blank",
-        rel: "noopener noreferrer nofollow"
+        rel: "noopener noreferrer"
       ]
 
   ## Examples
 
       iex> external_link("open page", to: "https://example.com") |> Phoenix.HTML.safe_to_string
+      "<a href=\\"https://example.com\\" rel=\\"noopener noreferrer\\" target=\\"_blank\\">open page</a>"
+
+      iex> external_link("open page", to: "https://example.com", rel: "nofollow") |> Phoenix.HTML.safe_to_string
       "<a href=\\"https://example.com\\" rel=\\"noopener noreferrer nofollow\\" target=\\"_blank\\">open page</a>"
 
   """
@@ -32,13 +35,25 @@ defmodule Retro.Phoenix.HTML.Link do
   end
 
   def external_link(contents, opts) do
-    default_opts = [
-      target: "_blank",
-      rel: "noopener noreferrer nofollow"
-    ]
+    default_rel = "noopener noreferrer"
 
-    opts = Keyword.merge(default_opts, opts)
+    rel =
+      case Keyword.get(opts, :rel) do
+        nil -> default_rel
+        new_rel -> "#{default_rel} #{new_rel}"
+      end
 
-    link(contents, opts)
+    opts = Keyword.delete(opts, :rel)
+
+    link(
+      contents,
+      Keyword.merge(
+        [
+          target: "_blank",
+          rel: rel
+        ],
+        opts
+      )
+    )
   end
 end
