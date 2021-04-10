@@ -39,6 +39,7 @@ defmodule Retro.MixProject do
       {:phoenix_html, ">= 0.0.0"},
       {:phoenix, ">= 0.0.0"},
       {:plug, ">= 0.0.0"},
+      {:floki, "~> 0.26"},
       {:ex_doc, "~> 0.23", only: :dev, runtime: false}
     ]
   end
