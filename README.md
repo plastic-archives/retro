@@ -10,15 +10,7 @@ So, I packed all my own requirements into this package.
 
 ## Installation
 
-Install retro by adding `retro` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:retro, "~> 0.1.0"}
-  ]
-end
-```
+Install retro by [adding `retro`](https://hex.pm/packages/retro) to your list of dependencies in `mix.exs`.
 
 ## Docs
 
