@@ -1,7 +1,7 @@
 defmodule Retro.MixProject do
   use Mix.Project
 
-  @version "2.1.2"
+  @version "2.2.0"
   @github_url "https://github.com/c4710n/retro"
 
   def project do
