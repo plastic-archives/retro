@@ -37,7 +37,7 @@ defmodule Retro.Phoenix.Component do
 
   ### Create a template
 
-  Edit `templates/component/example.html`:
+  Edit `templates/component/example.html.eex`:
 
       <div class="<%= @class %>">
         <%= @inner %>
